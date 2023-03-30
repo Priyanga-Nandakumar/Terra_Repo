@@ -1,16 +1,14 @@
 terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "4.60.0"
-    }
-  }
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.60.0"
+    }
+  }
 }
-
 provider "aws" {
-  region = "us-west-2"
+  # Configuration options
 }
-
 resource "aws_rds_cluster" "default" {
   cluster_identifier      = "aurora-cluster-demo"
   engine                  = "aurora-mysql"
@@ -22,4 +20,5 @@ resource "aws_rds_cluster" "default" {
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
 }
+
 
