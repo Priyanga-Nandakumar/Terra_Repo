@@ -1,19 +1,16 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "4.59.0"
-    }
-  }
-}
 
- 
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.60.0"
+    }
+  }
+}
 
 provider "aws" {
-  # Configuration options
+  region = "us-west-2b"
 }
-
- 
 
 resource "aws_rds_cluster" "mycluster" {
   cluster_identifier      = "aurora-cluster"
@@ -26,3 +23,4 @@ resource "aws_rds_cluster" "mycluster" {
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
 }
+
