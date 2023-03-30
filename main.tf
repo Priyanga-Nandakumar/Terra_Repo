@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2b"
+  region = "us-west-2"
 }
 
 resource "aws_rds_cluster" "mycluster" {
